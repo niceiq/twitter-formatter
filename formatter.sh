@@ -23,6 +23,8 @@ ffmpeg -i "$INPUT_FILE" \
        -vcodec libx264 \
        -acodec aac \
        -vf "setpts=$SPEED_PTS*PTS" \
+       -s hd1080 \
+       -b:v 8000k \
        -an \
        "$OUTPUT_FILE"     
 

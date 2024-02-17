@@ -1,13 +1,18 @@
 # Twitter Formatter
 This script will convert any video to a format that is supported by Twitter/X. 
 
+**Dependencies:**
+
+* ffmpeg
+* bc
+
 I designed it because I often post trade executions on my Twitter page 
 [@adamemoustaine](https://twitter.com/adamemoustaine) and I had a lot of trouble 
 uploading vidoes after they have been recorded. 
 
 This script also automatically speeds up videos to 120 seconds if needed. If you 
-don't need that feature and want to post longer video, you can simply comment 
-out the following line: 
+don't need that feature and want to post longer video, you can simply remove  
+the following line: 
 
 ```sh 
 -vf "setpts=$SPEED_PTS*PTS" \
