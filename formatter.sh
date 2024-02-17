@@ -21,9 +21,10 @@ SPEED_PTS=$(echo "scale=2; 120/$DURATION" | bc)
 ffmpeg -i "$INPUT_FILE" \
        -pix_fmt yuv420p \
        -vcodec libx264 \
+       -crf 18 \
+       -preset slow \
        -acodec aac \
        -vf "setpts=$SPEED_PTS*PTS" \
-       -s hd1080 \
        -b:v 8000k \
        -an \
        "$OUTPUT_FILE"     
